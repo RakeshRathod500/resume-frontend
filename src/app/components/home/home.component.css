@@ -1,0 +1,102 @@
+/* .container {
+  text-align: center;
+} */
+
+.hero-section {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0 ;
+  width: 100%;
+  height: 100%;
+  background: url('https://source.unsplash.com/1600x900/?professional,office') no-repeat center center/cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInDown { animation-name: fadeInDown; }
+.fadeInUp { animation-name: fadeInUp; }
+.fadeIn { animation-name: fadeIn; }
+
+.feature-row .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-row .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 123, 0.1);
+}
+
+.feature-row .card .bi {
+  transition: color 0.3s ease;
+}
+
+.feature-row .card:hover .bi {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+  .feature-row .col-md-4 {
+    margin-bottom: 20px;
+  }
+}

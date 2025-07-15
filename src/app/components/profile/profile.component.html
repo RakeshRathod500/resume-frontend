@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <h2 class="mb-4">Profile</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="profilePicture" class="form-label">Profile Picture</label>
+      <input type="file" class="form-control" id="profilePicture" (change)="onFileChange($event)">
+      <img *ngIf="profilePicture" [src]="profilePicture" alt="Profile Picture" class="mt-3 img-thumbnail" style="max-width: 200px;">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid">Save Profile</button>
+  </form>
+</div>

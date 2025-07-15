@@ -1,0 +1,463 @@
+<!-- <div class="container py-5">
+  <h2 class="mb-4">Resume Preview</h2>
+  <div *ngIf="resume" id="resume-preview" class="card p-4">
+    <h3>{{ resume.title }}</h3>
+    <h4>Personal Information</h4>
+    <p><strong>Name:</strong> {{ resume.personalInfo.name }}</p>
+    <p><strong>Email:</strong> {{ resume.personalInfo.email }}</p>
+    <p><strong>Phone:</strong> {{ resume.personalInfo.phone }}</p>
+    <h4>Education</h4>
+    <p><strong>Degree:</strong> {{ resume.education.degree }}</p>
+    <p><strong>Institution:</strong> {{ resume.education.institution }}</p>
+    <p><strong>Year:</strong> {{ resume.education.year }}</p>
+    <h4>Experience</h4>
+    <p><strong>Company:</strong> {{ resume.experience.company }}</p>
+    <p><strong>Position:</strong> {{ resume.experience.position }}</p>
+    <p><strong>Duration:</strong> {{ resume.experience.duration }}</p>
+    <h4>Skills</h4>
+    <p>{{ resume.skills }}</p>
+  </div>
+  <button class="btn btn-primary mt-3" (click)="downloadPDF()">Download as PDF</button>
+</div> -->
+<!-- new -->
+
+<!-- <div class="container py-4" *ngIf="resume; else loading">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h4>{{ resume.title }}</h4>
+    </div>
+    <div class="card-body">
+      <h5>{{ resume.personalInfo.name }}</h5>
+      <p>{{ resume.personalInfo.email }} | {{ resume.personalInfo.phone }}</p>
+      <p *ngIf="resume.personalInfo.profilePicture">
+        <img [src]="resume.personalInfo.profilePicture" alt="Profile" class="img-thumbnail" style="max-width: 150px;">
+      </p>
+      <h6>Summary</h6>
+      <p>{{ resume.summary }}</p>
+      <h6>Education</h6>
+      <ul>
+        <li *ngFor="let edu of resume.education">{{ edu.degree }} - {{ edu.institution }} ({{ edu.year }})</li>
+      </ul>
+      <h6>Experience</h6>
+      <ul>
+        <li *ngFor="let exp of resume.experience">{{ exp.position }} at {{ exp.company }} ({{ exp.duration }})</li>
+      </ul>
+      <h6>Skills</h6>
+      <span *ngFor="let skill of resume.skills?.split(',')">
+        <ng-container *ngIf="skill?.trim()">
+          <span class="badge bg-secondary me-1">{{ skill.trim() }}</span>
+        </ng-container>
+      </span>
+      <p><strong>Template:</strong> {{ resume.template }}</p>
+      <button class="btn btn-primary mt-3" (click)="downloadPDF()">Download PDF</button>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="text-center py-5" *ngIf="!error">
+    <p>Loading resume...</p>
+  </div>
+  <div class="text-center py-5 text-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+</ng-template> -->
+<!-- new1 -->
+<!-- <div class="container-fluid py-4" *ngIf="!loading; else loadingTemplate">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card resume-card"> -->
+        <!-- Navigation Indicators -->
+        <!-- <div class="card-header text-center">
+          <div class="step-indicators">
+            <span class="step active">1</span>
+            <span class="step active">2</span>
+            <span class="step">3</span>
+          </div>
+          <small class="text-muted">Experience and Summary Active</small>
+        </div> -->
+
+        <!-- Profile Section -->
+        <!-- <div class="card-body"> -->
+          <!-- <div class="profile-section d-flex align-items-center mb-4">
+            <div class="profile-image me-3">
+              <img *ngIf="resume?.personalInfo?.profilePicture" [src]="resume.personalInfo.profilePicture" alt="Profile" class="rounded-circle">
+            </div>
+            <div class="profile-details">
+              <h3 class="mb-1">{{ resume?.personalInfo?.name || 'Your Name' }}</h3>
+              <p class="mb-1"><i class="bi bi-envelope-fill"></i> {{ resume?.personalInfo?.email || 'N/A' }}</p>
+              <p><i class="bi bi-telephone-fill"></i> {{ resume?.personalInfo?.phone || 'N/A' }}</p>
+            </div>
+          </div> -->
+
+          <!-- Summary Section -->
+          <!-- <div class="mb-4">
+            <h4 class="section-heading">Summary</h4>
+            <p class="text-muted">{{ resume?.summary || 'No summary provided' }}</p>
+          </div> -->
+
+          <!-- Education Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.education?.length">
+            <h4 class="section-heading">Education</h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let edu of resume.education" class="mb-2">
+                <strong>{{ edu.degree }}</strong> - {{ edu.year }}<br>
+                <span class="text-muted">{{ edu.institution }}</span>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Experience Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.experience?.length">
+            <h4 class="section-heading">Experience</h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let exp of resume.experience" class="mb-2">
+                <strong>{{ exp.position }}</strong> - {{ exp.duration }}<br>
+                <span class="text-muted">{{ exp.company }}</span>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Skills Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.skills">
+            <h4 class="section-heading">Skills</h4>
+            <div>
+              <span *ngFor="let skill of resume.skills.split(',')" class="badge skill-badge me-2 mb-2">{{ skill.trim() }}</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Footer with Download Button -->
+        <!-- <div class="card-footer text-center">
+          <button class="btn btn-primary" (click)="downloadPDF()">Download as PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTemplate>
+  <div class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template> -->
+
+
+
+<!-- <div class="container-fluid py-4">
+  <div class="row justify-content-center" *ngIf="!loading; else loadingTemplate">
+    <div class="col-md-8" *ngIf="!error; else errorTemplate">
+      <div class="card resume-card"> -->
+        <!-- Navigation Indicators -->
+        <!-- <div class="card-header text-center">
+          <div class="step-indicators">
+            <span class="step active">1</span>
+            <span class="step active">2</span>
+            <span class="step">3</span>
+          </div>
+          <small class="text-muted">Experience and Summary Active</small>
+        </div> -->
+
+        <!-- Profile Section -->
+        <!-- <div class="card-body">
+          <div class="profile-section d-flex align-items-center mb-4" *ngIf="resume?.personalInfo">
+            <div class="profile-image me-3">
+              <img *ngIf="resume?.personalInfo?.profilePicture" [src]="resume?.personalInfo?.profilePicture" alt="Profile" class="rounded-circle">
+            </div>
+            <div class="profile-details">
+              <h3 class="mb-1">{{ resume?.personalInfo?.name || 'Your Name' }}</h3>
+              <p class="mb-1"><i class="bi bi-envelope-fill"></i> {{ resume?.personalInfo?.email || 'N/A' }}</p>
+              <p><i class="bi bi-telephone-fill"></i> {{ resume?.personalInfo?.phone || 'N/A' }}</p>
+            </div>
+          </div> -->
+
+          <!-- Summary Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.summary">
+            <h4 class="section-heading">Summary</h4>
+            <p class="text-muted">{{ resume?.summary }}</p>
+          </div> -->
+
+          <!-- Education Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.education?.length">
+            <h4 class="section-heading">Education</h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let edu of resume?.education" class="mb-2">
+                <strong>{{ edu.degree }}</strong> - {{ edu.year }}<br>
+                <span class="text-muted">{{ edu.institution }}</span>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Experience Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.experience?.length">
+            <h4 class="section-heading">Experience</h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let exp of resume?.experience" class="mb-2">
+                <strong>{{ exp.position }}</strong> - {{ exp.duration }}<br>
+                <span class="text-muted">{{ exp.company }}</span>
+                <p class="text-muted mt-1">{{ exp.description || 'No description provided' }}</p>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Projects Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.projects?.length">
+            <h4 class="section-heading">Projects</h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let proj of resume?.projects" class="mb-2">
+                <strong>{{ proj.title }}</strong> - {{ proj.duration }}<br>
+                <p class="text-muted mt-1">{{ proj.description || 'No description provided' }}</p>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Skills Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.skills && (resume?.skills || '').trim().length > 0">
+            <h4 class="section-heading">Skills</h4>
+            <div>
+              <span *ngFor="let skill of resume?.skills?.split(',')" class="badge skill-badge me-2 mb-2">{{ skill?.trim() }}</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Footer with Download Button -->
+        <!-- <div class="card-footer text-center">
+          <button class="btn btn-primary" (click)="downloadPDF()" [disabled]="!resume">Download as PDF</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #errorTemplate>
+      <div class="col-md-8">
+        <div class="alert alert-danger text-center" role="alert">
+          {{ error }}
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #loadingTemplate>
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+</div> -->
+<!-- skill -->
+
+
+
+<!-- <div class="container-fluid py-4">
+  <div class="row justify-content-center" *ngIf="!loading; else loadingTemplate">
+    <div class="col-md-8" *ngIf="!error; else errorTemplate">
+      <div class="card resume-card"> -->
+        <!-- Navigation Indicators -->
+        <!-- <div class="card-header text-center">
+          <div class="step-indicators">
+            <span class="step active">1</span>
+            <span class="step active">2</span>
+            <span class="step">3</span>
+          </div>
+          <small class="text-muted">Experience and Summary Active</small>
+        </div> -->
+
+        <!-- Profile Section -->
+        <!-- <div class="card-body">
+          <div class="profile-section d-flex align-items-center mb-4" *ngIf="resume?.personalInfo">
+            <div class="profile-image me-3">
+              <img *ngIf="resume?.personalInfo?.profilePicture" [src]="resume?.personalInfo?.profilePicture" alt="Profile" class="rounded-circle">
+            </div>
+            <div class="profile-details">
+              <h3 class="mb-1">{{ resume?.personalInfo?.name || 'Your Name' }}</h3>
+              <p class="mb-1"><i class="bi bi-envelope-fill"></i> {{ resume?.personalInfo?.email || 'N/A' }}</p>
+              <p><i class="bi bi-telephone-fill"></i> {{ resume?.personalInfo?.phone || 'N/A' }}</p>
+            </div>
+          </div> -->
+
+          <!-- Summary Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.summary">
+            <h4 class="section-heading"><strong>Summary</strong></h4>
+            <p class="text-muted">{{ resume?.summary }}</p>
+          </div> -->
+
+          <!-- Education Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.education?.length">
+            <h4 class="section-heading"><strong>Education</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let edu of resume?.education" class="mb-2">
+                <strong>{{ edu.degree }}</strong> - {{ edu.year }}<br>
+                <span class="text-muted">{{ edu.institution }}</span>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Experience Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.experience?.length">
+            <h4 class="section-heading"><strong>Experience</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let exp of resume?.experience" class="mb-2">
+                <strong>{{ exp.position }}</strong> - {{ exp.duration }}<br>
+                <span class="text-muted">{{ exp.company }}</span>
+                <p class="text-muted mt-1">{{ exp.description || 'No description provided' }}</p>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Projects Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.projects?.length">
+            <h4 class="section-heading"><strong>Projects</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let proj of resume?.projects" class="mb-2">
+                <strong>{{ proj.title }}</strong> - {{ proj.duration }}<br>
+                <p class="text-muted mt-1">{{ proj.description || 'No description provided' }}</p>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Certifications Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.certifications?.length">
+            <h4 class="section-heading"><strong>Certifications</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let cert of resume?.certifications" class="mb-2">
+                <strong>{{ cert.certificateName }}</strong> - {{ cert.year }}<br>
+                <span class="text-muted">{{ cert.issuingOrganization }}</span>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Skills Section -->
+          <!-- <div class="mb-4" *ngIf="resume?.skills && typeof resume?.skills === 'string'">
+            <h4 class="section-heading"><strong>Skills</strong></h4>
+            <div>
+              <span *ngFor="let skill of (resume?.skills || '').split(',')" class="badge skill-badge me-2 mb-2">{{ skill?.trim() }}</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Footer with Download Button -->
+        <!-- <div class="card-footer text-center">
+          <button class="btn btn-primary" (click)="downloadPDF()" [disabled]="!resume">Download as PDF</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #errorTemplate>
+      <div class="col-md-8">
+        <div class="alert alert-danger text-center" role="alert">
+          {{ error }}
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #loadingTemplate>
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+</div> -->
+
+
+<div class="container-fluid py-4">
+  <div class="row justify-content-center" *ngIf="!loading; else loadingTemplate">
+    <div class="col-md-8" *ngIf="!error; else errorTemplate">
+      <div class="card resume-card">
+        <!-- Profile Section -->
+        <div class="card-body">
+          <div class="profile-section d-flex align-items-center mb-4" *ngIf="resume?.personalInfo">
+            <div class="profile-image me-3">
+              <img *ngIf="resume?.personalInfo?.profilePicture" [src]="resume?.personalInfo?.profilePicture" alt="Profile" class="rounded-circle">
+            </div>
+            <div class="profile-details">
+              <h3 class="mb-1"><strong>{{ resume?.personalInfo?.name || 'Your Name' }}</strong></h3>
+              <p class="mb-1"><i class="bi bi-envelope-fill"></i> {{ resume?.personalInfo?.email || 'N/A' }}</p>
+              <p><i class="bi bi-telephone-fill"></i> {{ resume?.personalInfo?.phone || 'N/A' }}</p>
+            </div>
+          </div>
+
+          <!-- Summary Section -->
+          <div class="mb-4" *ngIf="resume?.summary">
+            <h4 class="section-heading"><strong>Summary</strong></h4>
+            <p class="text-muted">{{ resume?.summary }}</p>
+          </div>
+   <!-- Skills Section -->
+          <div class="mb-4" *ngIf="displayedSkills?.length">
+            <h4 class="section-heading"><strong>Skills</strong></h4>
+            <div>
+              <span *ngFor="let skill of displayedSkills" class="badge skill-badge me-2 mb-2">{{ skill }}</span>
+            </div>
+          </div>
+          <!-- Education Section -->
+          <div class="mb-4" *ngIf="resume?.education?.length">
+            <h4 class="section-heading"><strong>Education</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let edu of resume?.education" class="mb-2">
+                <strong>{{ edu.degree }}</strong> - {{ edu.year }}<br>
+                <span class="text-muted">{{ edu.institution }}</span>
+              </li>
+            </ul>
+          </div>
+       
+          <!-- Experience Section -->
+          <div class="mb-4" *ngIf="resume?.experience?.length">
+            <h4 class="section-heading"><strong>Experience</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let exp of resume?.experience" class="mb-2">
+                <strong>{{ exp.position }}</strong> - <i>{{ exp.duration }}</i><br>
+                <span class="text-muted">{{ exp.company }}</span>
+                <p class="text-muted mt-1">{{ exp.description || 'No description provided' }}</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Projects Section -->
+          <div class="mb-4" *ngIf="resume?.projects?.length">
+            <h4 class="section-heading"><strong>Projects</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let proj of resume?.projects" class="mb-2">
+                <strong>{{ proj.title }}</strong> - <i>{{ proj.duration }}</i><br>
+                <p class="text-muted mt-1">{{ proj.description || 'No description provided' }}</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Certifications Section -->
+          <div class="mb-4" *ngIf="resume?.certifications?.length">
+            <h4 class="section-heading"><strong>Certifications</strong></h4>
+            <ul class="list-unstyled">
+              <li *ngFor="let cert of resume?.certifications" class="mb-2">
+                <strong>{{ cert.certificateName }}</strong> - <i>{{ cert.year }}</i><br>
+                <i><span class="text-muted">{{ cert.issuingOrganization }}</span></i>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!-- Footer with Download Button -->
+        <div class="card-footer text-center">
+          <button class="btn btn-primary" (click)="downloadPDF()" [disabled]="!resume">Download as PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Template -->
+    <ng-template #errorTemplate>
+      <div class="col-md-8">
+        <div class="alert alert-danger text-center" role="alert">
+          {{ error }}
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Loading Template -->
+  <ng-template #loadingTemplate>
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+</div>

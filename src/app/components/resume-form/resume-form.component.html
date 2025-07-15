@@ -1,0 +1,541 @@
+<!-- <div class="container py-5">
+  <h2 class="mb-4">{{ resumeId ? 'Edit Resume' : 'Create Resume' }}</h2>
+  <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Resume Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title" required>
+    </div>
+    <h4>Personal Information</h4>
+    <div formGroupName="personalInfo" class="mb-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+    </div>
+    <h4>Education</h4>
+    <div formGroupName="education" class="mb-3">
+      <div class="mb-3">
+        <label for="degree" class="form-label">Degree</label>
+        <input type="text" class="form-control" id="degree" formControlName="degree">
+      </div>
+      <div class="mb-3">
+        <label for="institution" class="form-label">Institution</label>
+        <input type="text" class="form-control" id="institution" formControlName="institution">
+      </div>
+      <div class="mb-3">
+        <label for="year" class="form-label">Year</label>
+        <input type="text" class="form-control" id="year" formControlName="year">
+      </div>
+    </div>
+    <h4>Experience</h4>
+    <div formGroupName="experience" class="mb-3">
+      <div class="mb-3">
+        <label for="company" class="form-label">Company</label>
+        <input type="text" class="form-control" id="company" formControlName="company">
+      </div>
+      <div class="mb-3">
+        <label for="position" class="form-label">Position</label>
+        <input type="text" class="form-control" id="position" formControlName="position">
+      </div>
+      <div class="mb-3">
+        <label for="duration" class="form-label">Duration</label>
+        <input type="text" class="form-control" id="duration" formControlName="duration">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="skills" class="form-label">Skills (comma-separated)</label>
+      <input type="text" class="form-control" id="skills" formControlName="skills">
+    </div>
+    <div class="mb-3">
+      <label for="template" class="form-label">Template</label>
+      <select class="form-select" id="template" formControlName="template">
+        <option value="modern">Modern</option>
+        <option value="classic">Classic</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="resumeForm.invalid">Save Resume</button>
+    <a routerLink="/my-resumes" class="btn btn-secondary ms-2">Cancel</a>
+  </form>
+</div> -->
+
+
+<!-- <div class="container-fluid py-4">
+  <div class="row"> -->
+    <!-- Form Column -->
+    <!-- <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4>Build Your Resume</h4>
+        </div>
+        <div class="card-body">
+          <form #resumeForm="ngForm" (ngSubmit)="onSubmit()"> -->
+            <!-- Personal Info -->
+            <!-- <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="resume.personalInfo.name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="resume.personalInfo.email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="resume.personalInfo.phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="profilePicture" class="form-label">Profile Picture</label>
+              <input type="file" class="form-control" id="profilePicture" (change)="onFileChange($event)" accept="image/*">
+            </div> -->
+
+            <!-- Education -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Education</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Degree" [(ngModel)]="resume.education.degree" name="degree">
+                <input type="text" class="form-control" placeholder="Institution" [(ngModel)]="resume.education.institution" name="institution">
+                <input type="text" class="form-control" placeholder="Year" [(ngModel)]="resume.education.year" name="year">
+              </div>
+            </div> -->
+
+            <!-- Experience -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Experience</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Company" [(ngModel)]="resume.experience.company" name="company">
+                <input type="text" class="form-control" placeholder="Position" [(ngModel)]="resume.experience.position" name="position">
+                <input type="text" class="form-control" placeholder="Duration" [(ngModel)]="resume.experience.duration" name="duration">
+              </div>
+            </div> -->
+
+            <!-- Skills with Tags -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Skills</label>
+              <input type="text" class="form-control" id="skills" [(ngModel)]="newSkill" (keyup.enter)="addSkill()" placeholder="Add skill and press Enter">
+              <div class="mt-2">
+                <span *ngFor="let skill of resume.skills.split(',')" class="badge bg-secondary me-1">{{ skill.trim() }}</span>
+              </div>
+            </div> -->
+
+            <!-- Template Selector -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Template</label>
+              <select class="form-select" [(ngModel)]="resume.template" name="template">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+              </select>
+            </div> -->
+
+            <!-- Buttons -->
+            <!-- <button type="submit" class="btn btn-primary me-2">Save Resume</button>
+            <button type="button" class="btn btn-secondary" (click)="saveDraft()">Save Draft</button>
+          </form>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Preview Column -->
+    <!-- <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4>Preview</h4>
+        </div>
+        <div class="card-body">
+          <h5>{{ resume.personalInfo.name }}</h5>
+          <p>{{ resume.personalInfo.email }} | {{ resume.personalInfo.phone }}</p>
+          <p *ngIf="resume.personalInfo.profilePicture">
+            <img [src]="resume.personalInfo.profilePicture" alt="Profile" class="img-thumbnail" style="max-width: 150px;">
+          </p>
+          <h6>Education</h6>
+          <p>{{ resume.education.degree }} - {{ resume.education.institution }} ({{ resume.education.year }})</p>
+          <h6>Experience</h6>
+          <p>{{ resume.experience.position }} at {{ resume.experience.company }} ({{ resume.experience.duration }})</p>
+          <h6>Skills</h6>
+          <span *ngFor="let skill of resume.skills.split(',')" class="badge bg-secondary me-1">{{ skill.trim() }}</span>
+          <p><strong>Template:</strong> {{ resume.template }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- new -->
+
+
+
+<!-- <div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4>Build Your Resume</h4>
+        </div>
+        <div class="card-body">
+          <form #resumeForm="ngForm" (ngSubmit)="onSubmit()"> -->
+            <!-- Personal Info -->
+            <!-- <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="resume.personalInfo.name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="resume.personalInfo.email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="resume.personalInfo.phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="profilePicture" class="form-label">Profile Picture</label>
+              <input type="file" class="form-control" id="profilePicture" (change)="onFileChange($event)" accept="image/*">
+            </div> -->
+
+            <!-- Education -->
+            <!-- <div class="mb-3" *ngFor="let edu of resume.education; let i=index">
+              <label class="form-label">Education {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Degree" [(ngModel)]="edu.degree" [name]="'degree' + i">
+                <input type="text" class="form-control" placeholder="Institution" [(ngModel)]="edu.institution" [name]="'institution' + i">
+                <input type="text" class="form-control" placeholder="Year" [(ngModel)]="edu.year" [name]="'year' + i">
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addEducation()" *ngIf="i === resume.education.length - 1">Add Education</button>
+            </div> -->
+
+            <!-- Experience -->
+            <!-- <div class="mb-3" *ngFor="let exp of resume.experience; let i=index">
+              <label class="form-label">Experience {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Company" [(ngModel)]="exp.company" [name]="'company' + i">
+                <input type="text" class="form-control" placeholder="Position" [(ngModel)]="exp.position" [name]="'position' + i">
+                <input type="text" class="form-control" placeholder="Duration" [(ngModel)]="exp.duration" [name]="'duration' + i">
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addExperience()" *ngIf="i === resume.experience.length - 1">Add Experience</button>
+            </div> -->
+
+            <!-- Summary -->
+            <!-- <div class="mb-3">
+              <label for="summary" class="form-label">Summary</label>
+              <textarea class="form-control" id="summary" name="summary" [(ngModel)]="resume.summary" rows="3" placeholder="Write a brief summary about yourself"></textarea>
+            </div> -->
+
+            <!-- Skills with Tags -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Skills</label>
+              <input type="text" class="form-control" id="skills" [(ngModel)]="newSkill" (keyup.enter)="addSkill()" placeholder="Add skill and press Enter">
+              <div class="mt-2">
+                <span *ngFor="let skill of resume.skills.split(',')" class="badge bg-secondary me-1">{{ skill.trim() }}</span>
+              </div>
+            </div> -->
+
+            <!-- Template Selector -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Template</label>
+              <select class="form-select" [(ngModel)]="resume.template" name="template">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+              </select>
+            </div> -->
+
+            <!-- Buttons -->
+            <!-- <button type="submit" class="btn btn-primary me-2">Save Resume</button>
+            <button type="button" class="btn btn-secondary" (click)="saveDraft()">Save Draft</button>
+            <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- des -->
+
+
+<!-- <div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4>Build Your Resume</h4>
+        </div>
+        <div class="card-body"> -->
+          <!-- <form #resumeForm="ngForm" (ngSubmit)="onSubmit()"> -->
+            <!-- Personal Info -->
+            <!-- <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="resume.personalInfo.name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="resume.personalInfo.email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="resume.personalInfo.phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="profilePicture" class="form-label">Profile Picture</label>
+              <input type="file" class="form-control" id="profilePicture" (change)="onFileChange($event)" accept="image/*">
+            </div> -->
+
+            <!-- Summary -->
+            <!-- <div class="mb-3">
+              <label for="summary" class="form-label">Summary</label>
+              <textarea class="form-control" id="summary" name="summary" [(ngModel)]="resume.summary" rows="3" placeholder="Write a brief summary about yourself"></textarea>
+            </div> -->
+
+            <!-- Education -->
+            <!-- <div class="mb-3" *ngFor="let edu of resume.education; let i=index">
+              <label class="form-label">Education {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Degree" [(ngModel)]="edu.degree" [name]="'degree' + i">
+                <input type="text" class="form-control" placeholder="Institution" [(ngModel)]="edu.institution" [name]="'institution' + i">
+                <input type="text" class="form-control" placeholder="Year" [(ngModel)]="edu.year" [name]="'year' + i">
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addEducation()" *ngIf="i === resume.education.length - 1">Add Education</button>
+            </div> -->
+
+            <!-- Experience -->
+            <!-- <div class="mb-3" *ngFor="let exp of resume.experience; let i=index">
+              <label class="form-label">Experience {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Company" [(ngModel)]="exp.company" [name]="'company' + i">
+                <input type="text" class="form-control" placeholder="Position" [(ngModel)]="exp.position" [name]="'position' + i">
+                <input type="text" class="form-control" placeholder="Duration" [(ngModel)]="exp.duration" [name]="'duration' + i">
+              </div>
+              <div class="mb-2">
+                <label for="expDescription{{i}}" class="form-label">Description</label>
+                <textarea class="form-control" id="expDescription{{i}}" [name]="'expDescription' + i" [(ngModel)]="exp.description" rows="3" placeholder="Describe your responsibilities or achievements"></textarea>
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addExperience()" *ngIf="i === resume.experience.length - 1">Add Experience</button>
+            </div> -->
+
+            <!-- Projects -->
+            <!-- <div class="mb-3" *ngFor="let proj of resume.projects; let i=index">
+              <label class="form-label">Project {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Title" [(ngModel)]="proj.title" [name]="'projTitle' + i">
+                <input type="text" class="form-control" placeholder="Duration" [(ngModel)]="proj.duration" [name]="'projDuration' + i">
+              </div>
+              <div class="mb-2">
+                <label for="projDescription{{i}}" class="form-label">Description</label>
+                <textarea class="form-control" id="projDescription{{i}}" [name]="'projDescription' + i" [(ngModel)]="proj.description" rows="3" placeholder="Describe the project details"></textarea>
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addProject()" *ngIf="i === resume.projects.length - 1">Add Project</button>
+            </div> -->
+
+            <!-- Skills with Tags -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Skills</label>
+              <input type="text" class="form-control" id="skills" [(ngModel)]="newSkill" (keyup.enter)="addSkill()" placeholder="Add skill and press Enter">
+              <div class="mt-2">
+                <span *ngFor="let skill of resume.skills.split(',')" class="badge bg-secondary me-1">{{ skill.trim() }}</span>
+              </div>
+            </div> -->
+
+            <!-- Template Selector -->
+            <!-- <div class="mb-3">
+              <label class="form-label">Template</label>
+              <select class="form-select" [(ngModel)]="resume.template" name="template">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+              </select>
+            </div> -->
+
+            <!-- Buttons -->
+            <!-- <button type="submit" class="btn btn-primary me-2">Save Resume</button>
+            <button type="button" class="btn btn-secondary" (click)="saveDraft()">Save Draft</button>
+            <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- skill -->
+
+
+<div class="container-fluid py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="card resume-form-card shadow-lg">
+        <div class="card-header bg-gradient text-white d-flex justify-content-between align-items-center">
+          <h4 class="mb-0">Build Your Resume</h4>
+          <small class="text-white-50">Step-by-step resume creation</small>
+        </div>
+        <div class="card-body p-0">
+          <div class="row g-0">
+            <!-- Form Content -->
+            <div class="col-12">
+              <div class="card-body p-4">
+                <form #resumeForm="ngForm" (ngSubmit)="onSubmit()">
+                  <!-- Personal Info -->
+                  <div id="personal" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-person-fill"></i> <strong>Personal Info</strong></h5>
+                    <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Full Name</label>
+                          <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="resume.personalInfo.name" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="resume.personalInfo.email" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="phone" class="form-label">Phone</label>
+                          <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                            <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="resume.personalInfo.phone" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                          <label for="profilePicture" class="form-label">Profile Picture</label>
+                          <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-image"></i></span>
+                            <input type="file" class="form-control" id="profilePicture" (change)="onFileChange($event)" accept="image/*">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Summary -->
+                  <div id="summary" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-card-text"></i> <strong>Summary</strong></h5>
+                    <div class="mb-3">
+                      <label for="summary" class="form-label">Summary</label>
+                      <textarea class="form-control" id="summary" name="summary" [(ngModel)]="resume.summary" rows="4" placeholder="Write a brief summary about yourself"></textarea>
+                    </div>
+                  </div>
+
+                  <!-- Education -->
+                  <div id="education" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-mortarboard"></i> <strong>Education</strong></h5>
+                    <div class="mb-3" *ngFor="let edu of resume.education; let i=index">
+                      <label class="form-label">Education {{i + 1}}</label>
+                      <div class="row g-2 mb-2">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Degree" [(ngModel)]="edu.degree" [name]="'degree' + i">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Institution" [(ngModel)]="edu.institution" [name]="'institution' + i">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Year" [(ngModel)]="edu.year" [name]="'year' + i">
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addEducation()" *ngIf="i === resume.education.length - 1">Add Education</button>
+                    </div>
+                  </div>
+
+                  <!-- Experience -->
+                  <div id="experience" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-briefcase"></i> <strong>Experience</strong></h5>
+                    <div class="mb-3" *ngFor="let exp of resume.experience; let i=index">
+                      <label class="form-label">Experience {{i + 1}}</label>
+                      <div class="row g-2 mb-2">
+                        <div class="col-12 col-md-4">
+                          <input type="text" class="form-control" placeholder="Company" [(ngModel)]="exp.company" [name]="'company' + i">
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <input type="text" class="form-control" placeholder="Position" [(ngModel)]="exp.position" [name]="'position' + i">
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <input type="text" class="form-control" placeholder="Duration" [(ngModel)]="exp.duration" [name]="'duration' + i">
+                        </div>
+                      </div>
+                      <div class="mb-2">
+                        <label for="expDescription{{i}}" class="form-label">Description</label>
+                        <textarea class="form-control" id="expDescription{{i}}" [name]="'expDescription' + i" [(ngModel)]="exp.description" rows="3" placeholder="Describe your responsibilities or achievements"></textarea>
+                      </div>
+                      <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addExperience()" *ngIf="i === resume.experience.length - 1">Add Experience</button>
+                    </div>
+                  </div>
+
+                  <!-- Projects -->
+                  <div id="projects" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-tools"></i> <strong>Projects</strong></h5>
+                    <div class="mb-3" *ngFor="let proj of resume.projects; let i=index">
+                      <label class="form-label">Project {{i + 1}}</label>
+                      <div class="row g-2 mb-2">
+                        <div class="col-12 col-md-6">
+                          <input type="text" class="form-control" placeholder="Title" [(ngModel)]="proj.title" [name]="'projTitle' + i">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <input type="text" class="form-control" placeholder="Duration" [(ngModel)]="proj.duration" [name]="'projDuration' + i">
+                        </div>
+                      </div>
+                      <div class="mb-2">
+                        <label for="projDescription{{i}}" class="form-label">Description</label>
+                        <textarea class="form-control" id="projDescription{{i}}" [name]="'projDescription' + i" [(ngModel)]="proj.description" rows="3" placeholder="Describe the project details"></textarea>
+                      </div>
+                      <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addProject()" *ngIf="i === resume.projects.length - 1">Add Project</button>
+                    </div>
+                  </div>
+
+                  <!-- Certifications -->
+                  <div id="certifications" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-award"></i> <strong>Certifications</strong></h5>
+                    <div class="mb-3" *ngFor="let cert of resume.certifications; let i=index">
+                      <label class="form-label">Certification {{i + 1}}</label>
+                      <div class="row g-2 mb-2">
+                        <div class="col-12 col-md-4">
+                          <input type="text" class="form-control" placeholder="Certificate Name" [(ngModel)]="cert.certificateName" [name]="'certificateName' + i">
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <input type="text" class="form-control" placeholder="Issuing Organization" [(ngModel)]="cert.issuingOrganization" [name]="'issuingOrganization' + i">
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <input type="text" class="form-control" placeholder="Year" [(ngModel)]="cert.year" [name]="'year' + i">
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-secondary btn-sm mt-1" (click)="addCertification()" *ngIf="i === resume.certifications.length - 1">Add Certification</button>
+                    </div>
+                  </div>
+
+                  <!-- Skills -->
+                  <div id="skills" class="form-section mb-5">
+                    <h5 class="form-section-title"><i class="bi bi-stars"></i> <strong>Skills</strong></h5>
+                    <div class="mb-3">
+                      <label class="form-label">Add Skill</label>
+                      <div class="d-flex">
+                        <input type="text" [(ngModel)]="newSkill" name="skillInput" class="form-control me-2" placeholder="e.g. Angular">
+                        <button class="btn btn-outline-primary" type="button" (click)="addSkill()">Add</button>
+                      </div>
+                    </div>
+                    <div class="mb-2">
+                      <span *ngFor="let skill of displayedSkills" class="badge bg-primary me-2">{{ skill }}</span>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="form-section mb-5">
+                    <button type="submit" class="btn btn-primary btn-lg me-2">Save Resume</button>
+                    <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
